@@ -1,0 +1,28 @@
+.modal-data {
+    color: #000;
+}
+  
+.modal-content {
+text-align: center;
+width: 50%;
+border: 0px;
+color: #0750a4;
+}
+  
+.user-profile-image {
+margin: 10px auto;
+max-width: 15vh;
+}
+
+.border-blue-left {
+    border-right: solid 1px #0750a4;
+  }
+  
+  .border-blue-bottom {
+    border-bottom: solid 1px #0750a4;
+  }
+
+  .car-warper {
+    overflow: scroll;
+    height: 65vh;
+  }

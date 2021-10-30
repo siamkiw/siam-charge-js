@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.bg-primary {
+  background-color: #0750a4 !important;
+}
+
+.nav-link.active {
+  background-color: #0094d4 !important;
+}
+
+.navbar-brand {
+  color: #0750a4 !important;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0 !important;
+}
+
+.nav-link {
+  padding: 1rem 2rem !important;
+  background-color: #0750a4 !important;
+}
+
+.haeder-page {
+  color: #0750a4;
+  margin-top: 3vh;
+  margin-left: 2vh;
+  margin-bottom: 1vh;
+}
+
+.border-blue {
+  border: solid 1px #0750a4;
+  padding: 10px;
+  background-color: #fff;
+  /* background-color: #000; */
+  margin-bottom: 20px;
+}
+
+.btn-outline-primary {
+  color: #0750a4 !important;
+  border: #0750a4 solid 1px !important;
+}
+
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background-color: #0750a4 !important;
+  border: #0750a4 solid 1px !important;
+}
+
+.btn-primary {
+  color: #fff !important;
+  border: #0750a4 solid 1px !important;
+  background-color: #0750a4 !important;
+}
+
+.btn-primary:hover {
+  color: #0750a4 !important;
+  background-color: #fff !important;
+  border: #0750a4 solid 1px !important;
+}
+
+.underline {
+  border-bottom: #0750a4 solid 1px;
+}
+
+.list-icon {
+  /* width: 20px; */
+  height: 20px;
+}
+
+.text-blue {
+  color: #0750a4;
+}
+
+.text-primary {
+  color: #0750a4 !important;
+}
+
+.list-icon-container-red {
+  cursor: pointer;
+  background-color: #fe6c6c;
+  border-radius: 1px;
+  height: 50px;
+  width: 50px;
+}
+
+.list-icon-container-blue {
+  cursor: pointer;
+  background-color: #0750a4;
+  border-radius: 1px;
+  height: 50px;
+  width: 50px;
+}
+
+.list-icon-container-green {
+  cursor: pointer;
+  background-color: #24c879;
+  border-radius: 1px;
+  height: 50px;
+  width: 50px;
+}
+
+.list-icon-container-yellow {
+  cursor: pointer;
+  background-color: #ffa338;
+  border-radius: 1px;
+  height: 50px;
+  width: 50px;
+}
+
+.input {
+  border-color: #0750a4;
+}
+.form-label {
+  color: #0750a4;
+}
+
+.form-control {
+  border-color: #0750a4 !important;
+}
+
+.cupon-status {
+  color: #fff;
+  border-radius: 10px;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.cupon-green {
+  background-color: #24c879;
+}
+
+.cupon-red {
+  background-color: #fe6c6c;
+}
+
+.cupon-gray {
+  background-color: #c4c4c4;
+}
+
+.calendar-button {
+  height: calc(1.5em + 0.75rem + 2px);
+}
+
+.calendar-text {
+  font-size: 13px !important;
+  color: #0750a4;
+}
+
+.calendar-button:hover {
+  cursor: pointer;
+}
+
+.text-button {
+  height: 38px !important;
+  width: 38px !important;
+  border-radius: 0% !important;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
