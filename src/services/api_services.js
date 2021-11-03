@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import { getHeader, getHeaderFormData } from '../helper/apiHelper';
+import { getHeader } from '../helper/apiHelper';
 // import settingServices from './setting_services';
 import config from '../config';
 
@@ -9,6 +9,10 @@ const apiService = {
 	onLogin(req) {
 		return axios.post(`${BASE_URL}/admin/login`, req);
 	},
+	onGetChargeStations(){
+		console.log('onGetChargeStations')
+		return axios.get(`${BASE_URL}/admin/charge-station/list-all?limit=5&offset=0`, getHeader());
+	}
 	// onLogout() {
 	// 	return axios.post(`${BASE_URL}/v1/auth/logout`, {}, getHeader());
 	// },

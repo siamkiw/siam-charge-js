@@ -31,9 +31,18 @@ const routes = [
                     requiresAuth: true,
                 },
             },
+            {
+                path: '/chargingstation',
+                name: 'ChargingStation',
+                component: () => import('../views/ChargingStation.vue'),
+                meta: {
+                    requiresAuth: true,
+                },
+            },
         ]
     }
 ]
+
 
 const router = new VueRouter({
 	mode: 'history',
