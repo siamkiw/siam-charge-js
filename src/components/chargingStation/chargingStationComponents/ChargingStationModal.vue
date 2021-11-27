@@ -35,7 +35,7 @@
               alt=""
           /></a>
         </nav>
-        <div class="data-content">
+        <div class="data-content" style="overflow: scroll; height: 100%">
           <div
             v-if="this.tapList[0].isShow"
             class="d-flex justify-content-center"
@@ -236,6 +236,16 @@ export default {
       ],
     };
   },
+  props: {
+    id: {
+      type: String,
+      default: () => "",
+    },
+  },
+  mounted() {
+    console.log("id is : ", this.id);
+    console.log(this.$store.getters.filterID);
+  },
   methods: {
     onSelectTap(selectedTap) {
       for (let index in this.tapList) {
@@ -247,7 +257,7 @@ export default {
       }
     },
     onCloseModal(isClose) {
-      this.emit("on-close-modal");
+      this.$emit("on-close-modal");
       return isClose;
     },
   },

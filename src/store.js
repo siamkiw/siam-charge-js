@@ -11,6 +11,7 @@ const store = new Vuex.Store({
     refresh_token: "",
     expire: "", // date time,
     message: "",
+    id: ""
   },
   mutations: {
     setMessage(state, payload) {
@@ -28,6 +29,9 @@ const store = new Vuex.Store({
     setIsLoggedIn(state, payload) {
       state.isLoggedIn = payload;
     },
+    setIDFilter(state, payload){
+      state.id = payload
+    }
   },
   actions: {
     async login({ commit }, payload) {
@@ -52,6 +56,9 @@ const store = new Vuex.Store({
         console.error(e.response);
       }
     },
+    setIDFilter({commit}, payload){
+      commit("setIDFilter", payload)
+    }
     // async logout({ commit }) {
     // 	try {
     // 		await apiServices.onLogout();
@@ -66,6 +73,9 @@ const store = new Vuex.Store({
     isLoggedIn: (state) => {
       return state.isLoggedIn;
     },
+    filterID: (state) => {
+      return state.id
+    }
   },
 });
 

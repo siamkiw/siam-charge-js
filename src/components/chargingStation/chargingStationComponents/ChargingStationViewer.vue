@@ -60,7 +60,7 @@
                   justify-content-center
                   mx-1
                 "
-                @click="onCloseViewModal(true)"
+                @click="onCloseViewModal(true, item.id)"
               >
                 <img
                   class="list-icon-eye"
@@ -130,6 +130,7 @@
 
     <ChargingStationModal
       v-if="isViewModal"
+      :stationId="id"
       v-on:on-close-modal="onCloseViewModal()"
     />
   </div>
@@ -154,10 +155,12 @@ export default {
     return {
       isViewModal: false,
       isShowDeleteUserModal: false,
+      id: "",
     };
   },
   methods: {
-    onCloseViewModal(isClose) {
+    onCloseViewModal(isClose, id) {
+      this.$store.dispatch("setIDFilter", id);
       this.isViewModal = isClose;
     },
     onToogleDeleteUserModal(isClose) {

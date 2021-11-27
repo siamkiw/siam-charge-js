@@ -7,7 +7,7 @@
             <div class="mb-3">
               <label for="stationName" class="form-label my-2">ชื่อสถานี</label>
               <input
-                v-model="foo"
+                v-model="name"
                 type="text"
                 class="form-control mt-1"
                 id="stationName"
@@ -30,6 +30,7 @@
                 >เบอร์โทร</label
               >
               <input
+                v-model="contactNo"
                 type="number"
                 class="form-control mt-1"
                 id="stationNumber"
@@ -49,8 +50,8 @@
               <div class="mb-3">
                 <label for="IDNumber" class="form-label my-2">เวลาเปิด*</label>
                 <input
-                  type="text"
-                  class="form-control mt-1"
+                  type="time"
+                  class="form-control mt-1 w-100"
                   id=""
                   placeholder=""
                 />
@@ -103,17 +104,37 @@
                 >อัปโหลดรูปสถานีชาร์จ</label
               >
               <div class="d-flex justify-content-between mt-1">
+                <!-- <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01"
+                      >Upload</span
+                    >
+                  </div>
+                  <div class="custom-file">
+                    <input
+                      type="file"
+                      class="custom-file-input"
+                      id="inputGroupFile01"
+                      aria-describedby="inputGroupFileAddon01"
+                    />
+                    <label class="custom-file-label" for="inputGroupFile01"
+                      >Choose file</label
+                    >
+                  </div>
+                </div> -->
+
                 <input
-                  type="text"
+                  :ref="'uploader'"
+                  type="file"
                   class="form-control w-75"
                   style="height: 50px"
-                  id="memberEmail"
-                  placeholder="สถานที่ใกล้เคียง"
+                  @change="onFileChanged"
                 />
                 <button
                   type="button"
                   style="height: 50px"
                   class="btn btn-primary btn-block my-auto w-25 ml-3"
+                  @click="onUpload"
                 >
                   อัพโหลด
                 </button>
@@ -130,7 +151,6 @@
                 >ค่าบริการ / วัตต์</label
               >
               <input
-                v-model="foo"
                 type="text"
                 class="form-control mt-1"
                 id="stationName"
@@ -143,7 +163,6 @@
                 >ค่าจองเข้าชาร์จ ต่อ 1 ชม.</label
               >
               <input
-                v-model="foo"
                 type="text"
                 class="form-control mt-1"
                 id="stationName"
@@ -186,7 +205,11 @@
       </div>
       <div class="col d-flex justify-content-start">
         <div class="w-25">
-          <button type="button" class="btn btn-primary btn-lg btn-block">
+          <button
+            @click="onCreateStation"
+            type="button"
+            class="btn btn-primary btn-lg btn-block"
+          >
             บันทึกข้อมูล
           </button>
         </div>
@@ -203,7 +226,40 @@ export default {
   components: {
     ChargerBar,
   },
+  data() {
+    return {
+      name: "",
+      siteCodeName: "",
+      latLocation: "",
+      longLocation: "",
+      address: "",
+      contactNo: "",
+      googlePlaceId: "",
+      nearestPlace: "",
+      chargingStationImageCode: "",
+    };
+  },
   methods: {
+    onCreateStation() {
+      let req = {
+        name: this.name,
+        siteCodeName: this.siteCodeName,
+        latLocation: this.latLocation,
+        longLocation: this.longLocation,
+        address: this.address,
+        contactNo: this.contactNo,
+        googlePlaceId: this.googlePlaceId,
+        nearestPlace: this.nearestPlace,
+        chargingStationImageCode: this.chargingStationImageCode,
+      };
+      console.log("req : ", req);
+    },
+    createChargeStation() {
+      console.log("createChargeStation : ");
+    },
+    uploadImage() {
+      console.log("uploadImage : ");
+    },
     onCancelEdit() {
       console.log("on-cancel-edit");
       this.$emit("on-cancel-edit");
@@ -262,13 +318,3 @@ button img {
   margin-right: 10px;
 }
 </style>
-
-default: () => {
-        numMembers : {
-            num : 111,
-        }
-        // numCharger : 222,
-        // chargingTime : 333,
-
-
-    }

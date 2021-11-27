@@ -80,7 +80,7 @@
 export default {
   props: {
     isPower: {
-      type: Array,
+      type: Boolean,
       default: () => false,
     },
   },
